@@ -36,13 +36,13 @@ public class EmployeeResource {
         return new ResponseEntity<>(newEmployee, HttpStatus.CREATED);
     }
 
-    @PostMapping("/update")
+    @PutMapping("/update")
     public ResponseEntity<Employee> updateEmployee(@RequestBody Employee employee) {
         Employee updateEmployee = employeeService.addEmployee(employee);
         return new ResponseEntity<>(updateEmployee, HttpStatus.OK);
     }
 
-    @PostMapping("/delete/{id}")
+    @DeleteMapping("/delete/{id}")
     public ResponseEntity<?> deleteEmployee(@PathVariable("id") String id) {
         employeeService.deleteEmployee(id);
         return new ResponseEntity<>(HttpStatus.OK);
