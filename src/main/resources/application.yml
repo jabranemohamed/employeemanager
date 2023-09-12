@@ -23,6 +23,11 @@ spring:
 server:
   port: ${SERVER_PORT:8080}
 management:
+  security:
+   enabled=false:
+  trace:
+    http:
+      enabled: true
   endpoint:
     health:
       show-details: always
@@ -30,6 +35,9 @@ management:
     web:
       exposure:
         include: "*"
+  httpexchanges:
+    recording:
+      enabled: true
 #      base-path: /admin
 info:
   app:
